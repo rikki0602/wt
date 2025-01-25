@@ -80,6 +80,121 @@ console.log(fname);
 console.log(lname);
 
 //object destructing
+function fetchuserdata(userId){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            const user={id:userId,name:'John Doe',type:'premium'};
+            resolve(user);
+        },1000);
+    });
+}
+function fetchUserSetting(usertype){
+    return new Promise((resolve,reject)=>{
+        console.log('fetching setting for usertype:,${usertype}');
+        const setting=usertype=='premium'
+        ?{theme:'dark',notification:true,accesslevel:'high'}
+        :{theme:'light',notification:false,accesslevel:'low'}
+        resolve(setting);
+    });
+}
+//promise chaining
+fetchuserdata(1)
+.then(user=>fetchUserSetting(user.type))
+.then(setting=>{console.log(setting)})
+.catch(error=>{console.log(error)})
+
+function fetchuserdata(userId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const user = { id: userId, name: 'John Doe', type: 'premium' };
+            resolve(user);
+        }, 1000);
+    });
+}
+
+function fetchUserSetting(usertype) {
+    return new Promise((resolve, reject) => {
+        console.log(`fetching setting for usertype: ${usertype}`);
+        const setting = usertype == 'premium'
+            ? { theme: 'dark', notification: true, accesslevel: 'high' }
+            : { theme: 'light', notification: false, accesslevel: 'low' };
+        resolve(setting);
+    });
+}
+//async function and wait function
+async function display(){
+    let user=await fetchuserdata(1);
+    let setting=await fetchUserSetting(user.type);
+    console.log(setting);
+}
+display();
+
+//closure
+ 
+function outer(name){
+    var msg="welcome";
+    function inner(){
+        console.log(`${msg} to ${name}`);
+
+    }
+    return inner;
+
+}
+inner=outer("cvr");
+inner();
+
+//callback
+function fetchData(callback) {
+    setTimeout(() => {
+        console.log("Data fetched successfully.");
+        const data = { id: 1, name: "John Doe" };
+        
+        
+        callback(data);
+    }, 2000);
+}
+
+function processData(data) {
+    console.log("Processing data:", data);
+}
+
+
+fetchData(processData);
+
+function aArray(arr, callback) {
+    for (let i = 0; i < arr.length; i++) {
+        callback(arr[i]);
+    }
+}
+
+function logItem(item) {
+    console.log(item);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+aArray(numbers, logItem);
+
+
+function outerFunction(outerVariable) {
+  
+    return function innerFunction(innerVariable) {
+   
+      console.log("Outer variable:", outerVariable);
+      console.log("Inner variable:", innerVariable);
+    }
+  }
+  
+
+  const myClosure = outerFunction("I am from the outer function!");
+  
+
+  myClosure("I am from the inner function!");
+  
+ 
+  
+
+
+
 
 
 

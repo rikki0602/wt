@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
+<<<<<<< HEAD
     <style>
+=======
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <style>
+        /* Internal CSS for styling the form */
+>>>>>>> 1f8dd6f1353391d67e284caa81b1a2a3496c1a7e
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -15,6 +21,7 @@
             align-items: center;
             height: 100vh;
         }
+<<<<<<< HEAD
         .container {
             background: #fff;
             padding: 20px 30px;
@@ -52,10 +59,63 @@
         }
         button:hover {
             background-color: #0056b3;
+=======
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .form-container p {
+            text-align: center;
+        }
+
+        .form-container p a {
+            text-decoration: none;
+            color: #007BFF;
+>>>>>>> 1f8dd6f1353391d67e284caa81b1a2a3496c1a7e
         }
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <div class="container">
         <h2>Registration Form</h2>
         <form action="submit_registration.php" method="POST">
@@ -87,3 +147,26 @@
     </div>
 </body>
 </html>
+=======
+
+    <div class="form-container">
+        <h2>Register</h2>
+        <form action="submit_form.php" method="POST">
+            <!-- Name Input -->
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+      
+>>>>>>> 1f8dd6f1353391d67e284caa81b1a2a3496c1a7e
